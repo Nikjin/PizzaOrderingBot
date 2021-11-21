@@ -1,0 +1,69 @@
+# HeroCardGodfather()
+[HeroCard
+    title = PLANT-BASED GODFATHER 
+    subtitle = Starting at $8.99 
+    text = Plant-based beef, vibrant capsicum, cherry tomato & Kalamata olives, finished with creamy garlic sauce & oregano
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P400/NZ_P400_en_menu_8029.jpg?v-1898758131
+]
+# HeroCardBeefnOnion()
+[HeroCard
+    title = PLANT-BASED BEEF & ONION 
+    subtitle = Starting at $7.99 
+    text = Plant-based beef, red onion & mozzarella on a BBQ sauce base
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P380/NZ_P380_en_menu_4048.jpg?v847492733
+]
+# HeroCardVegan()
+[HeroCard
+    title = VEGAN EL SCORCHO 
+    subtitle = Starting at $7.99 
+    text = Vegan cheese, plant-based crumbled beef, fiery jalapenos & cherry tomato, finished with chilli flakes
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P439/NZ_P439_en_menu_8681.jpg?v1179308311
+]
+
+# HeroCardChickenFlorentine()
+[HeroCard
+    title = CHICKEN FLORENTINE 
+    subtitle = Starting at $8.99 
+    text = Seasoned chicken, roasted pumpkin, baby spinach, NZ parmesan & aged cheddar, complemented by a crème fraiche & garlic sauce base, finished with a rocket garnish
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P437/NZ_P437_en_menu_8681.jpg?v-155246893
+]
+# HeroCardBbqBrisket()
+[HeroCard
+    title = LOW & SLOW BBQ BRISKET
+    subtitle = Starting at $7.99  
+    text = Smokey beef brisket cooked low & slow, NZ aged cheddar, crispy rasher bacon, cherry tomato & red onion, all on a BBQ & garlic sauce base
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P432/NZ_P432_en_menu_8523.png?v-782973195
+]
+# HeroCardSalmonSupreme()
+[HeroCard
+    title = SALMON & PRAWN SUPREME
+    subtitle = Starting at $8.99  
+    text = Hot smoked pepper salmon, juicy prawns, roasted pumpkin & sliced red onion, seasoned with cheese & herb sprinkle, all on a crème fraiche base, finished with a hollandaise swirl & spring onions
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P438/NZ_P438_en_menu_8681.jpg?v1130949681
+]
+# HeroCardBbqMeat()
+[HeroCard
+    title = BBQ MEATS DELUXE
+    subtitle = Starting at $7.99  
+    text = Smokey beef brisket, paired with tender Peking duck, seasoned chicken, pepperoni & sliced red onion, all on a BBQ sauce base, topped with BBQ sauce & rocket garnish
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P435/NZ_P435_en_menu_8460.jpg?v-1762257660
+]
+# HeroCardPepperoni()
+[HeroCard
+    title = AMERICAN PEPPERONI
+    subtitle = Starting at $7.99  
+    text = A twist on a Domino’s classic. American-style pepperoni & creamy mozzarella on a marinara pizza sauce base
+    image = https://www.dominos.co.nz/ManagedAssets/NZ/product/P431/NZ_P431_en_menu_8342.jpg?v1269918798
+]
+# AllNonVeg()
+[Activity      
+   Attachments = ${HeroCardChickenFlorentine()} | ${HeroCardBbqBrisket()} | ${HeroCardSalmonSupreme()} | ${HeroCardBbqMeat()} | ${HeroCardPepperoni()}
+   AttachmentLayout = ${AttachmentLayoutType()}
+]
+# AllVeg()
+[Activity      
+   Attachments = ${HeroCardGodfather()} | ${HeroCardBeefnOnion()} | ${HeroCardVegan()}
+   AttachmentLayout = ${AttachmentLayoutType()}
+]
+# AttachmentLayoutType()
+-carousel

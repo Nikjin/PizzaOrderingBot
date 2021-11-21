@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# TextInput_Prompt_4goEvf()
+[Activity
+    Text = Your name?
+]
+
+# NumberInput_Prompt_D7Jt3I()
+[Activity
+    Text = Mobile number, please?
+]
+
+# TextInput_Prompt_SEllcL()
+[Activity
+    Text = Finally, your email id?
+]

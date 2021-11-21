@@ -1,0 +1,274 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Rm1OTh",
+    "name": "CustomizeDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "V5iUes"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "d0p14J"
+          },
+          "condition": "=user.customoptions",
+          "cases": [
+            {
+              "value": "Crust",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "zpOWBv"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_zpOWBv()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.crust",
+                  "choices": [
+                    "New Hand Tossed",
+                    "Wheat Thin Crust",
+                    "Fresh Pan Pizza",
+                    "Cheese Burst"
+                  ],
+                  "style": "heroCard",
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "A1yRNU"
+                  },
+                  "property": "user.extra",
+                  "value": "=\"null\""
+                }
+              ]
+            },
+            {
+              "value": "Extra Cheese",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "v2j7wU"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_v2j7wU()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "user.extra",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "style": "heroCard",
+                  "choiceOptions": {
+                    "includeNumbers": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "RM1QBT"
+                  },
+                  "property": "user.crust",
+                  "value": "='New Hand Tossed'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "hQmoFl"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_hQmoFl()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "user.else"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "b0y1Ge"
+          },
+          "condition": "=user.else ==\"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "40Zp8d"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "NoSNMm"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_NoSNMm()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "user.extra",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "style": "heroCard"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "No7YTU"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_No7YTU()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.crust",
+                  "choices": [
+                    "New Hand Tossed",
+                    "Wheat Thin Crust",
+                    "Fresh Pan Pizza",
+                    "Cheese Burst"
+                  ],
+                  "style": "heroCard",
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
+                }
+              ],
+              "condition": "=user.extra==\"null\""
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "mPBsED"
+              },
+              "activity": "${SendActivity_mPBsED()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "Z014Ax"
+          },
+          "condition": "=user.crust",
+          "cases": [
+            {
+              "value": "Wheat Thin Crust",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "AckELp"
+                  },
+                  "property": "user.price",
+                  "value": "=add(user.price, 2)"
+                }
+              ]
+            },
+            {
+              "value": "Cheese Burst",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "0FkCG5"
+                  },
+                  "property": "user.price",
+                  "value": "=add(user.price, 3)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Aq86MC"
+          },
+          "condition": "=user.extra==\"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "GFDKhW"
+              },
+              "property": "user.price",
+              "value": "=add(user.price, 2)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CustomizeDialog.lg",
+  "recognizer": "CustomizeDialog.lu.qna",
+  "id": "CustomizeDialog"
+}

@@ -1,0 +1,44 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = Hello, I am the pizza bot.
+    Speak = Hello, I am pizza bot
+    InputHint = ignoringInput
+]
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_qqWOrq()
+[Activity
+    Text = Sure. We can cancel it.
+]
+
+# SendActivity_N5w99r()
+[Activity
+    Text = How may I help you?
+]
+
+# TextInput_Prompt_OxmN7U()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_s77vz7()
+- ${expandText(@answer)}
+
+# TextInput_Prompt_yOlO8A()
+[Activity
+    Text = Your name, please?
+]
+
+# SendActivity_3sT785()
+[Activity
+    Text = Your order has been cancelled ${user.cancel}
+]

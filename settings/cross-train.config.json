@@ -1,0 +1,11 @@
+{
+  "pizzabot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "Order": [
+        "Order.en-us"
+      ],
+      "CancelOrder": ""
+    }
+  }
+}

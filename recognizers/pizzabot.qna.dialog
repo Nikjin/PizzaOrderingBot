@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "QnA_pizzabot",
+  "recognizers": {
+    "en-us": "pizzabot.en-us.qna",
+    "": "pizzabot.en-us.qna"
+  }
+}

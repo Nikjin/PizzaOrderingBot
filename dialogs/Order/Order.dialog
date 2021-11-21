@@ -1,0 +1,563 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "XtppJt",
+    "name": "Order",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "u4AvEz"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "zo5r6E"
+          },
+          "activity": "${SendActivity_zo5r6E()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ScVZxS"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Veg",
+            "Non-veg"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "property": "user.prefer",
+          "prompt": "${ChoiceInput_Prompt_ScVZxS()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "svRuB7"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "fBKerk"
+              },
+              "activity": "${SendActivity_fBKerk()}"
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "RUL2M9"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "user.choose",
+              "recognizerOptions": {
+                "recognizeOrdinals": true,
+                "recognizeNumbers": true
+              },
+              "choices": [
+                "Godfather",
+                "Veg Beef and Onion",
+                "Vegan Scorcho"
+              ],
+              "prompt": "${ChoiceInput_Prompt_RUL2M9()}"
+            },
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "i6fHdf"
+              },
+              "condition": "=user.choose",
+              "cases": [
+                {
+                  "value": "Godfather",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "iUFEO1"
+                      },
+                      "property": "user.price0",
+                      "value": "=8.99"
+                    }
+                  ]
+                },
+                {
+                  "value": "Veg Beef and Onion",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "xNcN5W"
+                      },
+                      "property": "user.price0",
+                      "value": "=7.99"
+                    }
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "d1cxf5"
+                      },
+                      "property": "user.price0",
+                      "value": "=7.99"
+                    }
+                  ],
+                  "value": "Vegan Scorcho"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "aNYgCn"
+              },
+              "property": "user.price",
+              "value": "=user.price0"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "6KxP2G"
+              },
+              "activity": "${SendActivity_6KxP2G()}"
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "Q2PDZR"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "user.choose",
+              "recognizerOptions": {
+                "recognizeOrdinals": true,
+                "recognizeNumbers": true
+              },
+              "choices": [
+                "Chicken Florentine",
+                "BBQ Brisket",
+                "Salmon and Prawn Supreme",
+                "BBQ Meats Deluxe",
+                "Pepperoni"
+              ],
+              "prompt": "${ChoiceInput_Prompt_Q2PDZR()}",
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "XDtnZG"
+              },
+              "condition": "=user.choose",
+              "cases": [
+                {
+                  "value": "Chicken Florentine",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "m34Ubm"
+                      },
+                      "property": "user.price1",
+                      "value": "=8.99"
+                    }
+                  ]
+                },
+                {
+                  "value": "BBQ Brisket",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "LrFnis"
+                      },
+                      "property": "user.price1",
+                      "value": "=7.99"
+                    }
+                  ]
+                },
+                {
+                  "value": "Salmon and Prawn Supreme",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "EwlvKp"
+                      },
+                      "property": "user.price1",
+                      "value": "8.99"
+                    }
+                  ]
+                },
+                {
+                  "value": "BBQ Meats Deluxe",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "g6ATDc"
+                      },
+                      "property": "user.price1",
+                      "value": "=7.99"
+                    }
+                  ]
+                },
+                {
+                  "value": "Pepperoni",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "7ZOGAn"
+                      },
+                      "property": "user.price1",
+                      "value": "=7.99"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "VvSQtx"
+              },
+              "property": "user.price",
+              "value": "=user.price1"
+            }
+          ],
+          "condition": "=user.prefer == \"Veg\""
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ASUR8T"
+          },
+          "activity": "${SendActivity_ASUR8T()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "2GopUD"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_2GopUD()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.size",
+          "choices": [
+            "Small",
+            "Medium",
+            "Large"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "GGoTLs"
+          },
+          "condition": "=user.size",
+          "cases": [
+            {
+              "value": "Medium",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "KbSbJd"
+                  },
+                  "property": "user.price",
+                  "value": "=add(user.price, 2)"
+                }
+              ]
+            },
+            {
+              "value": "Large",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "L4miUY"
+                  },
+                  "property": "user.price",
+                  "value": "=add(user.price, 6)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "b79c9G"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "prompt": "${ChoiceInput_Prompt_b79c9G()}",
+          "property": "user.custom",
+          "choices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "DDniNZ"
+          },
+          "condition": "=user.custom == \"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "PjLfjp"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${ChoiceInput_Prompt_PjLfjp()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "user.customoptions",
+              "choices": [
+                "Crust",
+                "Extra Cheese"
+              ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "YQVsLD"
+              },
+              "activityProcessed": true,
+              "dialog": "CustomizeDialog"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "ebMQBn"
+              },
+              "assignments": [
+                {
+                  "property": "user.crust",
+                  "value": "='Hand Tossed'"
+                },
+                {
+                  "property": "user.extra",
+                  "value": "=\"No\""
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "DWoa6p"
+              },
+              "activity": "${SendActivity_DWoa6p()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "Q6UV6j"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_Q6UV6j()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "user.drinks",
+          "choices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "EyGEiS"
+          },
+          "condition": "=user.drinks == \"Yes\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "szYskA"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_szYskA()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "property": "user.drinkchoice",
+              "choices": [
+                "Coke",
+                "Sprite",
+                "Mountain Dew",
+                "Pepsi"
+              ],
+              "style": "heroCard"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "XBv4B2"
+              },
+              "property": "user.price",
+              "value": "=add(user.price, 1)"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "TqAZcH"
+              },
+              "activity": "${SendActivity_TqAZcH()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "SwJJDC"
+              },
+              "activity": "${SendActivity_SwJJDC()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "9X4YzT"
+              },
+              "activity": "${SendActivity_9X4YzT()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MuZOcx"
+          },
+          "activity": "${SendActivity_MuZOcx()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "fIvZm9"
+          },
+          "activityProcessed": true,
+          "dialog": "InfoDialog"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UiZSIE"
+          },
+          "activity": "${SendActivity_UiZSIE()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Order.lg",
+  "recognizer": "Order.lu.qna",
+  "id": "Order"
+}

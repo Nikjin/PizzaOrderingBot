@@ -1,0 +1,31 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_zpOWBv()
+[Activity
+    Text = Please select the crust
+]
+
+# ChoiceInput_Prompt_v2j7wU()
+[Activity
+    Text = Do you want extra cheese on your pizza?
+]
+
+# ChoiceInput_Prompt_hQmoFl()
+[Activity
+    Text = Anything else?
+]
+
+# ChoiceInput_Prompt_NoSNMm()
+[Activity
+    Text = Do you want extra cheese on your pizza?
+]
+
+# ChoiceInput_Prompt_No7YTU()
+[Activity
+    Text = Please select the crust
+]
+
+# SendActivity_mPBsED()
+[Activity
+    Text = Ok cool.
+]

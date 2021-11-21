@@ -1,0 +1,114 @@
+[import](common.lg)
+
+# SendActivity_zo5r6E()
+[Activity
+    Text = Gotcha! Let me take your order, please.
+]
+
+# ChoiceInput_Prompt_2GopUD()
+[Activity
+    Text = Please tell me the size of pizza you would like to have?
+]
+
+# SendActivity_ASUR8T()
+[Activity
+    Text = ${SendActivity_ASUR8T_text()}
+]
+
+# SendActivity_ASUR8T_text()
+- Great choice!
+- Wonderful choice!
+# ChoiceInput_Prompt_Q6UV6j()
+[Activity
+    Text = Would you like to have soft drinks with your pizza?
+]
+
+# ChoiceInput_Prompt_szYskA()
+[Activity
+    Text = Here are some available options.
+]
+
+# SendActivity_SwJJDC()
+[Activity
+    Text = Okay cool.
+]
+
+# SendActivity_9X4YzT()
+[Activity
+    Text = ${SendActivity_9X4YzT_text()}
+]
+
+# SendActivity_9X4YzT_text()
+- ```Here's the summary of your order.
+Pizza type - ${user.choose}
+Size - ${user.size}
+Crust type - ${user.crust}
+Extra Cheese - ${user.extra}
+Total - $ ${user.price}```
+# SendActivity_TqAZcH()
+[Activity
+    Text = ${SendActivity_TqAZcH_text()}
+]
+
+# SendActivity_TqAZcH_text()
+- ```Here's the summary of your order.
+Pizza type - ${user.choose}
+Size - ${user.size}
+Crust type - ${user.crust}
+Drinks - ${user.drinkchoice}
+Extra Cheese - ${user.extra}
+Total - $ ${user.price}```
+# ChoiceInput_Prompt_9xMKUG()
+[Activity
+    Text = Here are your Veg options again.
+]
+
+# SendActivity_UiZSIE()
+[Activity
+    Text = ${SendActivity_UiZSIE_text()}
+]
+
+# SendActivity_UiZSIE_text()
+- ```Thank you ${user.name}.
+Your order is getting ready now.```
+# SendActivity_fBKerk()
+- ${AllVeg()}
+# SendActivity_6KxP2G()
+-${AllNonVeg()}
+# Ask_Activity_LuXlub()
+-${AllVeg()} 
+# ChoiceInput_Prompt_ScVZxS()
+[Activity
+    Text = What would you like to order?
+]
+
+# ChoiceInput_Prompt_RUL2M9()
+[Activity
+    Text = We have following options in Veg. Please choose one.
+]
+
+# ChoiceInput_Prompt_Q2PDZR()
+[Activity
+    Text = We have following options in Non-Veg. Please choose one.
+]
+
+# ChoiceInput_Prompt_b79c9G()
+[Activity
+    Text = Do you want to customize your pizza?
+]
+
+# ChoiceInput_Prompt_PjLfjp()
+[Activity
+    Text = What would you like to change?
+]
+
+# SendActivity_DWoa6p()
+[Activity
+    Text = Ok. Great!
+]
+
+# SendActivity_MuZOcx()
+[Activity
+    Text = Let me just take your info now.
+]
+
