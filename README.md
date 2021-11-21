@@ -1,6 +1,6 @@
 # Basic Pizza Ordering Bot
 
-This bot project was created using the MS Azure and bot composer framework. It also has LUIS, QnA, and Speech integration which are some of the ocgmitive services of Azure
+This bot project was created using the MS Azure and bot composer framework. It also has LUIS, QnA, and Speech integration which are some of the cognitive services of Azure
 
 ## I build a pizza ordering chatbot that can do the following:
 - Use Language Understanding to understand the user input and ultimately order a pizza
